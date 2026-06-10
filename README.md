@@ -135,6 +135,31 @@ Before you submit your solution, you need to save your progress with git.
 2. Create a commit by executing git commit -m "Your commit message"
 3. Push your commits to GitHub by executing git push origin main or git push origin master , depending on the name of your branch (use git branch to check on which branch you are).
 
+## Implemented Functionality
+
+### Book (`lib/book.py`)
+
+* `Book(title, page_count)` creates a book with a `title` and `page_count`.
+* `page_count` is validated on assignment - if set to a non-integer, it
+  prints `"page_count must be an integer"` and the value is not changed.
+* `turn_page()` prints `"Flipping the page...wow, you read fast!"`.
+
+### Coffee (`lib/coffee.py`)
+
+* `Coffee(size, price)` creates a coffee with a `size` and `price`.
+* `size` is validated on assignment - it must be `"Small"`, `"Medium"`, or
+  `"Large"`. Any other value prints `"size must be Small, Medium, or Large"`
+  and the value is not changed.
+* `tip()` prints `"This coffee is great, here's a tip!"` and increases
+  `price` by `1`.
+
+### Running the tests
+
+```console
+$ pipenv run pytest -x lib/testing/book_test.py
+$ pipenv run pytest -x lib/testing/coffee_test.py
+```
+
 ## Submission and Grading Criteria
 
 1. Use the rubric in Canvas as a guide for how this lab is graded.

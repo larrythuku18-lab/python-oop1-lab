@@ -1,4 +1,26 @@
 #!/usr/bin/env python3
 
 class Coffee:
-    pass
+
+    # Only these sizes are accepted by the size setter
+    SIZES = ["Small", "Medium", "Large"]
+
+    def __init__(self, size, price):
+        # Goes through the size setter, which validates against SIZES
+        self.size = size
+        self.price = price
+
+    @property
+    def size(self):
+        return self._size
+
+    @size.setter
+    def size(self, size):
+        if size in Coffee.SIZES:
+            self._size = size
+        else:
+            print("size must be Small, Medium, or Large")
+
+    def tip(self):
+        print("This coffee is great, here’s a tip!")
+        self.price += 1
