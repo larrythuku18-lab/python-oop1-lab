@@ -4,6 +4,7 @@ class Book:
 
     def __init__(self, title, page_count):
         self.title = title
+        # Goes through the page_count setter, which validates the type
         self.page_count = page_count
 
     @property
@@ -12,6 +13,7 @@ class Book:
 
     @page_count.setter
     def page_count(self, page_count):
+        # Reject non-integer values instead of storing them
         if isinstance(page_count, int):
             self._page_count = page_count
         else:

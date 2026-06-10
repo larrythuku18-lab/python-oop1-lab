@@ -2,9 +2,11 @@
 
 class Coffee:
 
+    # Only these sizes are accepted by the size setter
     SIZES = ["Small", "Medium", "Large"]
 
     def __init__(self, size, price):
+        # Goes through the size setter, which validates against SIZES
         self.size = size
         self.price = price
 
